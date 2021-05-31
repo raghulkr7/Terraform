@@ -1,0 +1,20 @@
+Steps for Terraform
+   1.Install terraform in linux/windows and check for version ( download in official website hashcorp)
+	 2.create folder and save all files in .tf format
+	 3.if you are doing in aws, Create IAM role with admin privilege (AdministratorAccess)
+	 4.Copy user's access key ID and security access key fof IAM role
+	 5.In var file paste those keys to run the configuration
+	 6. write a code in separate tf file, that is going to be executed.
+	 7. run the commands init,plan, apply to run your code
+Main Files:
+
+   main.tf  - main file contains provider ,region,
+	            (call modules, locals and data-sources to create all the resources)
+	 code.tf  -  your codes
+	 variable.tf   -  The file where your IAM role keys are saved
+	                  (contains information of variables used in main.tf)
+	 outputs.tf	- contains outputs from the resources generated in main.tf			  
+state file
+ Terraform must store state about your managed infrastructure and configuration. 
+ This state is used by Terraform to map real world resources to your configuration, 
+ keep track of metadata, and to improve performance for large infrastructures. 
